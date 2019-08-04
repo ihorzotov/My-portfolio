@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" initial-scale="1.0">
+    <title>Igor Zotov</title>
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="vue-app" class="wrapper">
+  <header class="header">
+    <div class="header-logo">
+      <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+      <p>Ihor Zotov <br>Front-end Developer</p>
+    </div>
+  </header>
+  <main class="main">
+    <h1>Portfolio</h1>
+    <project 
+      v-for="(item, index) in projects"
+      :key="index"
+      :data-item="item"
+      @clicked="showPresentation(index)"
+    >
+    </project>
+  </main>
+  <ul class="footer-social flex-c">
+    
+    <li class="footer-social__item" v-for="(url, item) in social"><a :href="url" target="_blank">{{item}}</a></li>
+    
+    <!-- <li class="footer-social__item"><a href="https://www.instagram.com/ihor_zotov/" target="_blank">instagram</a></li>
+    <li class="footer-social__item"><a href="https://www.facebook.com/igor.zotov.568" target="_blank">facebook</a></li> -->
+  </ul>
+  <div class="modal" :class="{active: (itemIndex != null)}" @click="itemIndex = null">
+    <div class="modal__zoom">
+      <img v-if="itemIndex != null" :src="projects[itemIndex].presentation" alt="">
+    </div>
+  </div>
+  
+</div>
+<script src="js/vue.js"></script>
+<script>
+  var obj_social ={
+    telegram : 'https://t.me/ihorzotov',
+    linkedIn :'https://www.linkedin.com/in/igor-zotov-896245167/',
+  },
+  obj_projects =[
+      {
+        image : '/img/owl.png',
+        gitLink:'https://github.com/ihorzotov/Old-owl.git',
+        gitPage:'https://ihorzotov.github.io/Old-owl',
+        webLink:'http://parabee8.beget.tech/',
+        presentation:'/img/owl-presentation.jpg',
+      },
+      {
+        image : '/img/teplo.png',
+        webLink:'https://teplo-st.ru/',
+        presentation:'/img/teplo-presentation.jpg',
+      },
+      {
+        image : '/img/img.png',
+        webLink:'/documents/illustration.html',
+      },
+      {
+        image : '/img/telecommunications-config.png',
+        webLink:'http://dtcgroup.com.ua/configurator',
+      },
+      {
+        image : '/img/telecommunications.png',
+        gitLink:'https://github.com/ihorzotov/telecommunicationsGIT.git',
+        webLink:'http://dtcgroup.com.ua/',
+      },
+      {
+        image : '/img/selfcard.png',
+        gitLink:'https://github.com/ihorzotov/selfcard.git',
+        gitPage:'https://ihorzotov.github.io/selfcard/documents/constructor',
+        webLink:'http://selfcard.me',
+      },
+      {
+        image : '/img/cake-masal.png',
+        gitLink:'https://github.com/ihorzotov/cakes.git',
+        gitPage:'https://ihorzotov.github.io/cakes/',
+        webLink:'https://cake-masal.ru/',
+        presentation:'/img/cake-presentation.jpg',
+      },
+      {
+        image : '/img/nox.png',
+        gitLink:'https://github.com/ihorzotov/Nox.git',
+        gitPage:'https://ihorzotov.github.io/Nox/',
+        webLink:'http://noxpremium.com',
+        presentation:'/img/nox-presentation.jpg',
+      },
+      {
+        image : '/img/derr.png',
+        gitLink:'https://github.com/ihorzotov/derr.git',
+        gitPage:'https://ihorzotov.github.io/derr/',
+      },
+      {
+        image : '/img/med.png',
+        gitLink:'https://github.com/ihorzotov/med.git',
+        gitPage:'https://ihorzotov.github.io/med/',
+      },
+      {
+        image : '/img/dogs.png',
+        gitLink:'https://github.com/ihorzotov/DogsHouse.git',
+        gitPage:'https://ihorzotov.github.io/DogsHouse/',
+      },
+      {
+        image : '/img/rielty.png',
+        gitLink:'https://github.com/ihorzotov/RIELTY.git',
+        webLink:'http://alternativa-rielty.ru/',
+      },
+    ];
+</script>
+<script src="js/script.js"></script>
+</body>
+</html>
