@@ -28,9 +28,6 @@
   <ul class="footer-social flex-c">
     
     <li class="footer-social__item" v-for="(url, item) in social"><a :href="url" target="_blank">{{item}}</a></li>
-    
-    <!-- <li class="footer-social__item"><a href="https://www.instagram.com/ihor_zotov/" target="_blank">instagram</a></li>
-    <li class="footer-social__item"><a href="https://www.facebook.com/igor.zotov.568" target="_blank">facebook</a></li> -->
   </ul>
   <div class="modal" :class="{active: (itemIndex != null)}" @click="itemIndex = null">
     <div class="modal__zoom">
@@ -51,12 +48,12 @@
         gitLink:'https://github.com/ihorzotov/Old-owl.git',
         gitPage:'https://ihorzotov.github.io/Old-owl',
         webLink:'http://parabee8.beget.tech/',
-        presentation:'/img/owl-presentation.jpg',
+        presentation:'./img/owl-presentation.jpg',
       },
       {
         image : './img/teplo.png',
         webLink:'https://teplo-st.ru/',
-        presentation:'/img/teplo-presentation.jpg',
+        presentation:'./img/teplo-presentation.jpg',
       },
       {
         image : './img/img.png',
@@ -82,14 +79,14 @@
         gitLink:'https://github.com/ihorzotov/cakes.git',
         gitPage:'https://ihorzotov.github.io/cakes/',
         webLink:'https://cake-masal.ru/',
-        presentation:'/img/cake-presentation.jpg',
+        presentation:'./img/cake-presentation.jpg',
       },
       {
         image : './img/nox.png',
         gitLink:'https://github.com/ihorzotov/Nox.git',
         gitPage:'https://ihorzotov.github.io/Nox/',
         webLink:'http://noxpremium.com',
-        presentation:'/img/nox-presentation.jpg',
+        presentation:'./img/nox-presentation.jpg',
       },
       {
         image : './img/derr.png',
